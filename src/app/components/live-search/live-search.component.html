@@ -1,0 +1,31 @@
+<div class="search-container not-in-popup resolution-width search-not-in-popup">
+    
+    <!-- <mat-form-field class="example-full-width">
+        <mat-label>חיפוש נייר ערך</mat-label>
+        <input matInput placeholder="חיפו נייר ...">
+    </mat-form-field>
+    <div _ngcontent-sxr-c3="" class="search-results ng-star-inserted">
+        <div _ngcontent-sxr-c3="" class="row ng-star-inserted">
+            <div _ngcontent-sxr-c3="" class="col-xs-6 text-left flip">
+                
+            </div>
+     
+        </div>
+
+    </div> -->
+    <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <input type="text"
+                 placeholder="Pick one"
+                 aria-label="Number"
+                 matInput
+                 [formControl]="myControl"
+                 [matAutocomplete]="auto">
+          <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" (optionSelected)="onChangeSelect($event.option.value)">
+            <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+              {{option}}
+            </mat-option>
+          </mat-autocomplete>
+        </mat-form-field>
+      </form>
+</div>

@@ -1,0 +1,12 @@
+export class PaperModel123{
+    PaperId: number;
+    PaperName:string;
+}
+export interface IPaperModel {
+  id: number;
+  productName: string;
+  productCode: string;
+  tags?: string[];
+  price: number;
+  description: string;
+  imageUrl: string;

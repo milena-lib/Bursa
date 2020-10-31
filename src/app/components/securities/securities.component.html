@@ -1,0 +1,60 @@
+<div class="container">
+    <h2>שלום, {{customerName}}</h2>
+    <!-- <div>
+        <div class="header-row"></div>
+        <div class="header-row"> {{lastDate}} | {{lastTime}} :כניסה אחרונה</div>
+    </div> -->
+    <div>
+        <app-live-search></app-live-search>
+    </div>
+    <div *ngIf="paperList">
+        <div class="tbl-container"> 
+            <div>סינון בצד הקליינט</div>
+            <mat-form-field appearance="fill" dir="rtl">
+                <mat-label>בחר הבורסה</mat-label>
+                <mat-select [(ngModel)]="selectedBursa" (selectionChange)="onBursaChange($event)">
+                    <mat-option *ngFor="let bursa of bursaList" [value]="bursa.Id">
+                    {{bursa.Name}}
+                    </mat-option>
+                    bz
+                </mat-select>
+            </mat-form-field>
+        
+            <table mat-table [dataSource]="paperList" class="mat-elevation-z8">
+                <ng-container matColumnDef="PaperName">
+                    <th mat-header-cell *matHeaderCellDef>שם נייר</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.PaperName }} </td>
+                </ng-container>
+                
+                <ng-container matColumnDef="PaperTypeValue">
+                    <th mat-header-cell *matHeaderCellDef>סוג נייר</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.PaperTypeValue.Name }} </td>
+                </ng-container>                  
+                
+                <ng-container matColumnDef="LastDeal">
+                    <th mat-header-cell *matHeaderCellDef>עסקה אחרונה</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.LastDeal }} </td>
+                </ng-container>        
+                
+                <ng-container matColumnDef="LastRate">
+                    <th mat-header-cell *matHeaderCellDef>שער אחרון</th>
+                    <td mat-cell *matCellDef="let element"> {{ element.LastRate }} </td>
+                </ng-container>        
+                
+                <ng-container matColumnDef="LastRatePercent">
+                    <th mat-header-cell *matHeaderCellDef>שינוי יומי %</th>
+                    <td mat-cell *matCellDef="let element" style="direction: ltr; text-align: right;"> {{ element.LastRatePercent }} </td>
+                </ng-container>  
+                
+                <ng-container matColumnDef="Amount">
+                    <th mat-header-cell *matHeaderCellDef>מס' עסקאות </th>
+                    <td mat-cell *matCellDef="let element"> {{element.Amount}} </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columndefs"></tr>
+                <tr mat-row *matRowDef="let row; columns: columndefs;"></tr>
+            </table>
+        </div>
+
+    </div>
+</div>

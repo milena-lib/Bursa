@@ -1,0 +1,31 @@
+.container {
+    /* width: 600px; */
+    margin: 50px auto;
+    padding: 40px;
+    direction: rtl;
+}
+
+.container h2 {
+    /* direction: rtl; */
+    border-bottom: 4px solid #2dd5c4;
+}
+
+.tbl-container {
+    background: #2dd5c4;
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+}
+
+th {
+    text-align: right !important;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+td, th {
+    padding: 0 10px !important;
+}
+
