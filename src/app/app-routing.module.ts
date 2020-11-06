@@ -1,15 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
-import { SecuritiesComponent } from './components/securities/securities.component';
 
 
 const routes: Routes = [
-   { path: '',  component:SecuritiesComponent },
   { path: 'home',  loadChildren: () => import('./pages/home/home.module').then(m => m.HomeModule) },
   { path: 'about', loadChildren: () => import('./pages/about/about.module').then(m => m.AboutModule) }, 
-  // { path: 'items', loadChildren: () => import('./pages/items/items.module').then(m => m.ItemsModule) }, 
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  { path: 'bursa', loadChildren: () => import('./pages/bursa/bursa.module').then(m => m.BursaModule)},
+  { path: 'search', loadChildren: () => import('./pages/quick-search/quick-search.module').then(m => m.QuickSearchModule)},
+  { path: 'forms', loadChildren: () => import('./pages/reactive-forms/reactive-forms.module').then(m => m.ReactiveFormsModule)},
+  { path: '', redirectTo: 'bursa', pathMatch: 'full' }
 ];
 
 @NgModule({

@@ -1,1 +1,7 @@
+<nav mat-tab-nav-bar dynamicHeight>
+    <a mat-tab-link *ngFor="let lnk of links" [routerLink]="[lnk.link]"
+     (click)="activeLink = lnk.link"
+     [active]="activeLink == lnk.link"> {{lnk.text}} </a>
+</nav>
+
 <router-outlet></router-outlet>
