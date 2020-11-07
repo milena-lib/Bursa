@@ -33,3 +33,11 @@ label.mat-form-field-label {
 app-live-search .mat-form-field-infix {
     width: 222px !important;
 }
+
+nav.mat-tab-header {
+    direction: rtl;
+}
+
+.mat-option-text {
+    text-align: right;
+}

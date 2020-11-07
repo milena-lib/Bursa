@@ -1,0 +1,17 @@
+.container {
+    direction: rtl;
+    padding: 20px;
+}
+
+.select-block {
+    direction: rtl;
+    display: block;
+    width: 200px;
+    text-align: right;
+}
+
+mat-select {
+    text-align: right;
+    padding-bottom: 5px;
+}
+
