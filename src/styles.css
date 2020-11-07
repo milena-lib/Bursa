@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; direction: rtl; }
 
 .mat-form-field-appearance-fill .mat-form-field-flex {
     background-color: white !important;
@@ -40,4 +40,16 @@ nav.mat-tab-header {
 
 .mat-option-text {
     text-align: right;
+}
+
+.select-block {
+    direction: rtl;
+    display: block;
+    width: 200px;
+    text-align: right;
+}
+
+mat-select {
+    text-align: right;
+    padding-bottom: 5px;
 }
